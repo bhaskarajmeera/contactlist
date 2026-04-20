@@ -6,9 +6,21 @@
     background: url(./Assets/bg1.jpg) no-repeat center;
     background-size: cover;
 }
+.phone::-webkit-scrollbar{
+    display: none;
+
+}
 .slider{
     width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+    opacity: 0.7;
+    transition: opacity0.2s;
 
+}
+.slider:hover{
+    opacity: 1;
+    cursor: pointer;
 }
 .slider::-webkit-slider-thumb{
     -webkit-appearance: none;
@@ -30,10 +42,9 @@
 #label{
     top:50%;
     left:50%;
-
     transform: translate(-50%,-50%);
     pointer-events: none;
-    animation: sliderAnimation;
+    animation: sliderAnimation 3S ease-in-out infinite;
 }
 
 @keyframes slideSAnimation{

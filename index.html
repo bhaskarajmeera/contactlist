@@ -11,9 +11,9 @@
 </head>
 <body>
 <div class="wrapper min-vh-100 d-flex justify-content-center align-items-center">
-<div class="phone border border-5 border-black rounded-5 shadow-lg" style="height: 600px;width:300px">
+<div class="phone border border-5 border-black rounded-5 shadow-lg overflow-y-scroll" style="height: 600px;width:300px">
     <!-- black section in phone icon -->
-     <div class="text-white d-flex justify-content-between align-items-center overflow-y-scroll" style="height: 50px; padding:10px">
+     <div class="text-white d-flex justify-content-between align-items-center" style="height: 50px; padding:10px">
         <span>12:12</span>
         <div class="bg-black w-25 rounded-pill" style="height: 1.4rem;"></i>
         </div>
@@ -24,17 +24,27 @@
      </div>
 
 <!-- Home Screen -->
- <main class="homeScreen h-100 p-2 position-relative">
-    <div class="slide-container bg-white p-3 rounded-4 shadow position-absolute" style="top:400px;">
+ <main class="homeScreen h-100 p-5 position-relative">
+    <div class="slide-container bg-white p-3 rounded-4 shadow position-absolute" style="top:400px">
         <input type="range" 
         min="0" 
         max="100" 
         value="0"
         class="slider"
         id="mySlider"/>
-        <label id="lable" class="position-absolute text-center w-100">Slide To Unlock</label>
+        <label id="label" class="position-absolute text-center w-100">Slide To Unlock</label>
     </div>
  </main>
+
+ <!-- apps Screen -->
+  <main class="appScreen p-2 bg-dark pt-5" style="height: 540px;display: none;">
+    <div class="d-flex justify-content-center">
+    <div class="d-flex flex-column align-items-center">
+    <i class="bi bi-person-rolodex text-danger fs-2 bg-white px-3 rounded"></i>
+    <span class="text-white">Contact</span> 
+    </div>
+    </div>
+  </main>
 </div>
 </div>
 
