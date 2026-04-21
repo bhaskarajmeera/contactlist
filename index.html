@@ -22,9 +22,8 @@
         <i class="bi bi-battery-half"></i>
         </div>
      </div>
-
 <!-- Home Screen -->
- <main class="homeScreen h-100 p-5 position-relative">
+ <main class="homeScreen h-100 p-5 position-relative" style="display: none;">
     <div class="slide-container bg-white p-3 rounded-4 shadow position-absolute" style="top:400px">
         <input type="range" 
         min="0" 
@@ -35,16 +34,53 @@
         <label id="label" class="position-absolute text-center w-100">Slide To Unlock</label>
     </div>
  </main>
-
  <!-- apps Screen -->
-  <main class="appScreen p-2 bg-dark pt-5" style="height: 540px;display: none;">
+<main class="appScreen p-2 bg-dark pt-5" style="height: 540px;display: none;">
     <div class="d-flex justify-content-center">
     <div class="d-flex flex-column align-items-center">
     <i class="bi bi-person-rolodex text-danger fs-2 bg-white px-3 rounded"></i>
     <span class="text-white">Contact</span> 
     </div>
     </div>
-  </main>
+</main>
+<!-- contact list Screen -->
+<main class="conactListScreen" style="height: 90%;">
+<div class="contactListContainer">
+<!-- title -->
+<h2 class="p-2">Contacts</h2>
+<!-- search bar-->
+<div class="header mt-2 p-2 position-relative">
+   <i class="bi bi-search position-absolute fs-4 mx-1 text-secondary"></i>
+<input type="text" id="search" class="form-control rounded-pill" placeholder="Search contact"/>
+</div>
+<!-- accordion -->
+<div class="bg-white w-25 rounded m-auto p-3 showSpinner">
+   <div class="spinner-border text-primary" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+</div>
+<!-- contactlist -->
+ <div id="light" class="bg-light pt-2">
+   <div class="">
+  <span id="userCount">10</span>Contact
+   </div>
+   <div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        Accordion Item #3
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>This is the third item’s accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+</div>
+ </div>
+</div>
+</main>
 </div>
 </div>
 
