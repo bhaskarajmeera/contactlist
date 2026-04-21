@@ -2,6 +2,10 @@
     background: url(./Assets/bg.jpg) no-repeat center;
     background-size: cover;
 }
+a{
+    text-decoration: none;
+    color: inherit;
+}
 .phone{
     background: url(./Assets/bg1.jpg) no-repeat center;
     background-size: cover;

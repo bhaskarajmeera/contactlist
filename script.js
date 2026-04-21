@@ -14,10 +14,10 @@ displayAppScreen();
         label.textContent = "slide To Unlock";
     }
 });
-/* hide home screen and show appps screen */
+/* hide home screen */
 const displayAppScreen=()=>{
 document.querySelector(".homeScreen").remove();
-
+/* show appps screen  */
 document.querySelector(".appScreen").style.display = "block";
 
 };
