@@ -67,3 +67,6 @@ a{
 .header i{
     right: 10px;
 }
+.appScreen i{
+    cursor: pointer;
+}

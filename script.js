@@ -4,13 +4,14 @@ let userList = [];
 const slider=document.getElementById("mySlider");
 slider.addEventListener('change',(e)=>{
     const {value}=e.target;
-    console.log(value);
+    
     const label=document.getElementById("label");
 
     if(value>70){
 label.textContent = "";
 displayAppScreen();
-    }else{
+    }
+    else{
         label.textContent = "slide To Unlock";
     }
 });
@@ -21,32 +22,29 @@ document.querySelector(".homeScreen").remove();
 document.querySelector(".appScreen").style.display = "block";
 
 };
+const displayContactScreen=()=>{
+document.querySelector(".appScreen").remove();
+/* show contact screen  */
+document.querySelector(".contactListScreen").style.display = "block";
+fetchUsers(apiEP);
+};
 
 /* rest full api usage */
 const fetchUsers= async(url)=>{
-/* fetch user */
-
-/* promise method */
-
 /* aysnc await */
 const response= await fetch(url);
 const data = await response.json();
 userList = data.results;
-
-
 /* hide spinner */
 document.querySelector(".showSpinner").style.display ="none";
-
+console.log(data);
 /* show the user details */
 displayContactList(userList);
-
 };
-fetchUsers(apiEP);
-
+/* display Contact List */
 const displayContactList = (userList)=>{
-   console.log(userList);
+                console.log(userList);
     document.getElementById("list").style.display = "block";
-    
     let str ="";
   userList.map((item,i)=>{
     str += `<div class="accordion-item">
@@ -57,7 +55,9 @@ const displayContactList = (userList)=>{
     data-bs-target="#collapse${i}" 
     aria-expanded="false" 
     aria-controls="collapse${i}">
-    <img src="${item.picture.large}" alt="" width="50px" class="rounded-circle"/>
+    <img src="${item.picture.large}" 
+    alt="" width="50px" 
+    class="rounded-circle"/>
     <div class="ms-2">
     <div class="fw-bolder">${item.name.title} ${item.name.first} ${item.name.last}
     </div>
@@ -91,14 +91,15 @@ const displayContactList = (userList)=>{
       </div> 
       </div>
     </div>
-  </div>`
+  </div>`;
   });
-  document.getElementById("userAccordion").innerHTML=str;
+  document.getElementById("userAccordion").innerHTML = str;
 
+  document.getElementById("userCount").innerText = userList.length;
 };
 
 /* search contact  */
-document.getElementById("search").addEventListener("keypress",(e)=>{
+document.getElementById("search").addEventListener("keyup",(e)=>{
     const {value} =e.target;
     console.log(value);
 
@@ -110,3 +111,4 @@ return name.includes(value.toLowerCase());
 console.log(filteredUsers);
 displayContactList(filteredUsers);
 });
+
